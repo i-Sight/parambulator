@@ -38,7 +38,12 @@
     "uglify-js": "3.10.0"
   },
   "scripts": {
-    "test": "./test.sh",
-    "build": "./build.sh"
-  }
+	"build:minify": "uglifyjs parambulator.js -c \"evaluate=false\" --comments \"/ Copyright .*/\" -m --source-map  \"filename='parambulator-min.map'\" -o parambulator-min.js",
+	"build:lint": "jshint parambulator.js",
+	"build:document": "docco parambulator.js -o doc",
+    "build": "npm run build:minify; npm run build:lint; npm run build:document;",
+	"test:unit": "jasmine-node ./test",
+	"test:end-2-end": "phantomjs test/run-jasmine.js test/jasmine.html",
+	"test": "npm run test:unit; npm run test:end-2-end;"
+}
 }
