@@ -34,12 +34,12 @@
 <span class="hljs-comment">/* jshint node:true, asi:true, eqnull:true */</span>
 
 (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-pi">  "use strict"</span>;
+<span class="hljs-meta">  &quot;use strict&quot;</span>;
 
-  <span class="hljs-keyword">var</span> root           = <span class="hljs-keyword">this</span>
+  <span class="hljs-keyword">var</span> root           = <span class="hljs-built_in">this</span>
   <span class="hljs-keyword">var</span> previous_parambulator = root.parambulator
 
-  <span class="hljs-keyword">var</span> has_require = <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">require</span> !== <span class="hljs-string">'undefined'</span>
+  <span class="hljs-keyword">var</span> has_require = <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">require</span> !== <span class="hljs-string">&#x27;undefined&#x27;</span>
 
 
   <span class="hljs-keyword">var</span> _      = root._
@@ -47,9 +47,9 @@
   <span class="hljs-keyword">var</span> jsonic = root.jsonic
 
 
-  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> _ === <span class="hljs-string">'undefined'</span> ) {
+  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> _ === <span class="hljs-string">&#x27;undefined&#x27;</span> ) {
     <span class="hljs-keyword">if</span>( has_require ) {
-      _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lodash'</span>)
+      _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;lodash&#x27;</span>)
     }</pre></div></div>
             
         </li>
@@ -65,21 +65,21 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'parambulator requires underscore, see http://underscorejs.org'</span>);
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;parambulator requires underscore, see http://underscorejs.org&#x27;</span>);
   }
 
-  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> gex === <span class="hljs-string">'undefined'</span> ) {
+  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> gex === <span class="hljs-string">&#x27;undefined&#x27;</span> ) {
     <span class="hljs-keyword">if</span>( has_require ) {
-      gex = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gex'</span>)
+      gex = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;gex&#x27;</span>)
     }
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'parambulator requires gex, see http://github.com/rjrodger/gex'</span>);
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;parambulator requires gex, see http://github.com/rjrodger/gex&#x27;</span>);
   }
 
-  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> jsonic === <span class="hljs-string">'undefined'</span> ) {
+  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> jsonic === <span class="hljs-string">&#x27;undefined&#x27;</span> ) {
     <span class="hljs-keyword">if</span>( has_require ) {
-      jsonic = <span class="hljs-built_in">require</span>(<span class="hljs-string">'jsonic'</span>)
+      jsonic = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;jsonic&#x27;</span>)
     }
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'parambulator requires jsonic, see http://github.com/rjrodger/jsonic'</span>);
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;parambulator requires jsonic, see http://github.com/rjrodger/jsonic&#x27;</span>);
   }
 
 
@@ -88,7 +88,7 @@
 
 
   <span class="hljs-keyword">var</span> quantrule = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> pass, rulename </span>) </span>{
-    rulename = rulename || <span class="hljs-string">'quantrule'</span>
+    rulename = rulename || <span class="hljs-string">&#x27;quantrule&#x27;</span>
 
     <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
       ctxt.prop = <span class="hljs-literal">null</span>
@@ -101,7 +101,7 @@
       })
 
       <span class="hljs-keyword">if</span>( !pass(found) ) {
-        ctxt.value = <span class="hljs-string">''</span>+pn
+        ctxt.value = <span class="hljs-string">&#x27;&#x27;</span>+pn
         <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
       }
       <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> cb();
@@ -128,7 +128,7 @@
 
 
   <span class="hljs-keyword">var</span> childrule = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> pass, noneok, rulename </span>) </span>{
-    rulename = rulename || <span class="hljs-string">'childrule'</span>
+    rulename = rulename || <span class="hljs-string">&#x27;childrule&#x27;</span>
 
     <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
       <span class="hljs-keyword">var</span> pn = ctxt.util.proplist(ctxt)
@@ -187,241 +187,241 @@
             </div>
             
             <div class="content"><div class='highlight'><pre>
-    if( !_.isArray(pn) ) {
-      pn = [''+pn]
+    <span class="hljs-keyword">if</span>( !_.isArray(pn) ) {
+      pn = [<span class="hljs-string">&#x27;&#x27;</span>+pn]
     }
 
-    var all = []
-    _.each(pn, function(n){
+    <span class="hljs-keyword">var</span> all = []
+    _.each(pn, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>)</span>{
 
-      if( n.match( /[*?]/ ) ) {
+      <span class="hljs-keyword">if</span>( n.match( <span class="hljs-regexp">/[*?]/</span> ) ) {
         all = all.concat( _.keys(gex(n).on(ctxt.point)) )
       }
-      else all.push(n);
+      <span class="hljs-keyword">else</span> all.push(n);
     })
 
-    return all
+    <span class="hljs-keyword">return</span> all
   }
 
 
-  function truefn(){return true}
-  function falsefn(){return false}
-  function noval(v){return _.isUndefined(v)||_.isNull(v)}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">truefn</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">falsefn</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">noval</span>(<span class="hljs-params">v</span>)</span>{<span class="hljs-keyword">return</span> _.isUndefined(v)||_.isNull(v)}
 
-  var valrule = function( pass ) {
-    return function(ctxt,cb) {
-      var v = ctxt.point
-      var p = ctxt.rule.spec
-      if( !_.isUndefined(v) ) {
-        if( !pass(v, p) ) {
-          return ctxt.util.fail(ctxt,cb)
+  <span class="hljs-keyword">var</span> valrule = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> pass </span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> v = ctxt.point
+      <span class="hljs-keyword">var</span> p = ctxt.rule.spec
+      <span class="hljs-keyword">if</span>( !_.isUndefined(v) ) {
+        <span class="hljs-keyword">if</span>( !pass(v, p) ) {
+          <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
         }
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     }
   }
 
 
-  var rulemap = {
+  <span class="hljs-keyword">var</span> rulemap = {
 
-    atmostone$:  quantrule( function(f){return f&lt;=1}, 'atmostone$'),
-    exactlyone$: quantrule( function(f){return 1==f}, 'exactlyone$'),
-    atleastone$: quantrule( function(f){return 1&lt;=f}, 'atleastone$'),
+    <span class="hljs-attr">atmostone$</span>:  quantrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">f</span>)</span>{<span class="hljs-keyword">return</span> f&lt;=<span class="hljs-number">1</span>}, <span class="hljs-string">&#x27;atmostone$&#x27;</span>),
+    <span class="hljs-attr">exactlyone$</span>: quantrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">f</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>==f}, <span class="hljs-string">&#x27;exactlyone$&#x27;</span>),
+    <span class="hljs-attr">atleastone$</span>: quantrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">f</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>&lt;=f}, <span class="hljs-string">&#x27;atleastone$&#x27;</span>),
 
 
-    required$: childrule( function(ctxt,p,v){return !_.isUndefined(v)}, falsefn, 'required$' ),
+    <span class="hljs-attr">required$</span>: childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> !_.isUndefined(v)}, falsefn, <span class="hljs-string">&#x27;required$&#x27;</span> ),
 
-    notempty$: childrule(
-      function(ctxt,p,v){
-        return !_.isUndefined(v) &amp;&amp; !_.isNull(v) &amp;&amp; '' !== v
+    <span class="hljs-attr">notempty$</span>: childrule(
+      <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{
+        <span class="hljs-keyword">return</span> !_.isUndefined(v) &amp;&amp; !_.isNull(v) &amp;&amp; <span class="hljs-string">&#x27;&#x27;</span> !== v
       },
       truefn,
-      'notempty$'
+      <span class="hljs-string">&#x27;notempty$&#x27;</span>
     ),
 
-    string$:   childrule( function(ctxt,p,v){return noval(v) || _.isString(v)}, truefn, 'string$' ),
-    integer$:  childrule( function(ctxt,p,v){return noval(v) || _.isNumber(v) &amp;&amp; v===(v|0)}, truefn, 'integer$' ),
-    number$:   childrule( function(ctxt,p,v){return noval(v) || _.isNumber(v)}, truefn, 'number$' ),
-    boolean$:  childrule( function(ctxt,p,v){return noval(v) || _.isBoolean(v)}, truefn, 'boolean$' ),
-    date$:     childrule( function(ctxt,p,v){return noval(v) || _.isDate(v)}, truefn, 'date$' ),
-    array$:    childrule( function(ctxt,p,v){return noval(v) || _.isArray(v)}, truefn, 'array$' ),
-    object$:   childrule( function(ctxt,p,v){return noval(v) || _.isObject(v) &amp;&amp; !_.isArray(v)}, truefn, 'object$' ),
-    function$: childrule( function(ctxt,p,v){return noval(v) || _.isFunction(v)}, truefn, 'function$' ),
+    <span class="hljs-attr">string$</span>:   childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isString(v)}, truefn, <span class="hljs-string">&#x27;string$&#x27;</span> ),
+    <span class="hljs-attr">integer$</span>:  childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isNumber(v) &amp;&amp; v===(v|<span class="hljs-number">0</span>)}, truefn, <span class="hljs-string">&#x27;integer$&#x27;</span> ),
+    <span class="hljs-attr">number$</span>:   childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isNumber(v)}, truefn, <span class="hljs-string">&#x27;number$&#x27;</span> ),
+    <span class="hljs-attr">boolean$</span>:  childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isBoolean(v)}, truefn, <span class="hljs-string">&#x27;boolean$&#x27;</span> ),
+    <span class="hljs-attr">date$</span>:     childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isDate(v)}, truefn, <span class="hljs-string">&#x27;date$&#x27;</span> ),
+    <span class="hljs-attr">array$</span>:    childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isArray(v)}, truefn, <span class="hljs-string">&#x27;array$&#x27;</span> ),
+    <span class="hljs-attr">object$</span>:   childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isObject(v) &amp;&amp; !_.isArray(v)}, truefn, <span class="hljs-string">&#x27;object$&#x27;</span> ),
+    <span class="hljs-attr">function$</span>: childrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,p,v</span>)</span>{<span class="hljs-keyword">return</span> noval(v) || _.isFunction(v)}, truefn, <span class="hljs-string">&#x27;function$&#x27;</span> ),
 
-    lt$:  valrule( function(p,v){return p &lt; v} ),
-    lte$: valrule( function(p,v){return p &lt;= v} ),
-    gt$:  valrule( function(p,v){return p &gt; v} ),
-    gte$: valrule( function(p,v){return p &gt;= v} ),
+    <span class="hljs-attr">lt$</span>:  valrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p,v</span>)</span>{<span class="hljs-keyword">return</span> p &lt; v} ),
+    <span class="hljs-attr">lte$</span>: valrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p,v</span>)</span>{<span class="hljs-keyword">return</span> p &lt;= v} ),
+    <span class="hljs-attr">gt$</span>:  valrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p,v</span>)</span>{<span class="hljs-keyword">return</span> p &gt; v} ),
+    <span class="hljs-attr">gte$</span>: valrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p,v</span>)</span>{<span class="hljs-keyword">return</span> p &gt;= v} ),
 
-    min$: valrule( function(p,v){return p &gt;= v}),
-    max$: valrule( function(p,v){return p &lt;= v}),
+    <span class="hljs-attr">min$</span>: valrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p,v</span>)</span>{<span class="hljs-keyword">return</span> p &gt;= v}),
+    <span class="hljs-attr">max$</span>: valrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p,v</span>)</span>{<span class="hljs-keyword">return</span> p &lt;= v}),
 
-    uniq$: function(ctxt,cb){
-      var value = ctxt.point
-      var o = {}
+    <span class="hljs-attr">uniq$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>)</span>{
+      <span class="hljs-keyword">var</span> value = ctxt.point
+      <span class="hljs-keyword">var</span> o = {}
 
-      for( var i=0; i&lt;value.length;i++ ) {
-        if(_.has(o, value[i])){
-          return ctxt.util.fail(ctxt,cb)
-        } else {
-          o[value[i]]= 1
+      <span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;value.length;i++ ) {
+        <span class="hljs-keyword">if</span>(_.has(o, value[i])){
+          <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
+        } <span class="hljs-keyword">else</span> {
+          o[value[i]]= <span class="hljs-number">1</span>
         }
       }
 
-      return cb()
+      <span class="hljs-keyword">return</span> cb()
     },
 
-    only$: function(ctxt,cb) {
-      var pn = ctxt.util.proplist(ctxt)
+    <span class="hljs-attr">only$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> pn = ctxt.util.proplist(ctxt)
 
-      for( var p in ctxt.point ) {
-        if( !_.include(pn,p) ) {
+      <span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> p <span class="hljs-keyword">in</span> ctxt.point ) {
+        <span class="hljs-keyword">if</span>( !(_.includes||_.contains)(pn,p) ) {
           ctxt.prop = p
-          return ctxt.util.fail(ctxt,cb)
+          <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
         }
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     },
 
 
-    wild$: function(ctxt,cb) {
-      var value = ctxt.point
+    <span class="hljs-attr">wild$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> value = ctxt.point
 
-      if( !_.isUndefined(value) ) {
-        if( !gex(ctxt.rule.spec).on(value) ) {
-          return ctxt.util.fail(ctxt,cb)
+      <span class="hljs-keyword">if</span>( !_.isUndefined(value) ) {
+        <span class="hljs-keyword">if</span>( !gex(ctxt.rule.spec).on(value) ) {
+          <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
         }
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     },
 
 
-    eq$: function(ctxt,cb) {
-      var value = ctxt.point
+    <span class="hljs-attr">eq$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> value = ctxt.point
 
-      if( !_.isUndefined(value) ) {
-        if( ctxt.rule.spec !== value ) {
-          return ctxt.util.fail(ctxt,cb)
+      <span class="hljs-keyword">if</span>( !_.isUndefined(value) ) {
+        <span class="hljs-keyword">if</span>( ctxt.rule.spec !== value ) {
+          <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
         }
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     },
 
-    minlen$: lenrule( function(valuelen, conditionlen){return valuelen &gt;= conditionlen} ),
-    maxlen$: lenrule( function(valuelen, conditionlen){return valuelen &lt;= conditionlen} ),
+    <span class="hljs-attr">minlen$</span>: lenrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">valuelen, conditionlen</span>)</span>{<span class="hljs-keyword">return</span> valuelen &gt;= conditionlen} ),
+    <span class="hljs-attr">maxlen$</span>: lenrule( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">valuelen, conditionlen</span>)</span>{<span class="hljs-keyword">return</span> valuelen &lt;= conditionlen} ),
 
-    re$: function(ctxt,cb) {
-      var value = ctxt.point
+    <span class="hljs-attr">re$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> value = ctxt.point
 
-      if( !_.isUndefined(value) ) {
-        value = ''+value
-        var redef = ctxt.rule.spec
-        var reopt = void(0)
+      <span class="hljs-keyword">if</span>( !_.isUndefined(value) ) {
+        value = <span class="hljs-string">&#x27;&#x27;</span>+value
+        <span class="hljs-keyword">var</span> redef = ctxt.rule.spec
+        <span class="hljs-keyword">var</span> reopt = <span class="hljs-keyword">void</span>(<span class="hljs-number">0</span>)
 
-        var m = /^\/(.*)\/(\w*)$/.exec(ctxt.rule.spec)
-        if( m ) {
-          redef = m[1]
-          reopt = m[2]
+        <span class="hljs-keyword">var</span> m = <span class="hljs-regexp">/^\/(.*)\/(\w*)$/</span>.exec(ctxt.rule.spec)
+        <span class="hljs-keyword">if</span>( m ) {
+          redef = m[<span class="hljs-number">1</span>]
+          reopt = m[<span class="hljs-number">2</span>]
         }
 
-        var re = new RegExp(redef,reopt)
+        <span class="hljs-keyword">var</span> re = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(redef,reopt)
 
-        if( !re.exec(value) ) {
-          return ctxt.util.fail(ctxt,cb)
+        <span class="hljs-keyword">if</span>( !re.exec(value) ) {
+          <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
         }
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     },
 
 
-    type$: function(ctxt,cb) {
-      var pn = ctxt.util.proplist(ctxt)
+    <span class="hljs-attr">type$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> pn = ctxt.util.proplist(ctxt)
 
-      var checkmap = {
-        string:_.isString,
-        number:_.isNumber,
-        integer:function(v){return _.isNumber(v) &amp;&amp; v===(v|0)},
-        boolean:_.isBoolean,
-        date:_.isDate,
-        array:_.isArray,
-        object:function(v){return _.isObject(v) &amp;&amp; !_.isArray(v) &amp;&amp; !_.isDate(v)},
-        'function':function(v){return _.isFunction(v)}
+      <span class="hljs-keyword">var</span> checkmap = {
+        <span class="hljs-attr">string</span>:_.isString,
+        <span class="hljs-attr">number</span>:_.isNumber,
+        <span class="hljs-attr">integer</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>)</span>{<span class="hljs-keyword">return</span> _.isNumber(v) &amp;&amp; v===(v|<span class="hljs-number">0</span>)},
+        <span class="hljs-attr">boolean</span>:_.isBoolean,
+        <span class="hljs-attr">date</span>:_.isDate,
+        <span class="hljs-attr">array</span>:_.isArray,
+        <span class="hljs-attr">object</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>)</span>{<span class="hljs-keyword">return</span> _.isObject(v) &amp;&amp; !_.isArray(v) &amp;&amp; !_.isDate(v)},
+        <span class="hljs-string">&#x27;function&#x27;</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>)</span>{<span class="hljs-keyword">return</span> _.isFunction(v)}
       }
 
-      var found = 0;
-      _.each(pn, function(p){
-        var check = checkmap[p.toLowerCase()]
-        if( check ) {
+      <span class="hljs-keyword">var</span> found = <span class="hljs-number">0</span>;
+      _.each(pn, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p</span>)</span>{
+        <span class="hljs-keyword">var</span> check = checkmap[p.toLowerCase()]
+        <span class="hljs-keyword">if</span>( check ) {
           found += check(ctxt.point)
         }
       })
 
-      if( !found ) {
-        return ctxt.util.fail(ctxt,cb)
+      <span class="hljs-keyword">if</span>( !found ) {
+        <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     },
 
-    format$: function(ctxt,cb) {
-      var pn = ctxt.util.proplist(ctxt)
+    <span class="hljs-attr">format$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> pn = ctxt.util.proplist(ctxt)
 
-      var checkmap = {
-        datetime:    function checkFormatRegex(v) { return /\d{4}-(0[1-9]|1[1-2])-([0-2]\d|3[0-1])T([0-1]\d|2[0-4]):[0-5]\d:[0-5]\dZ/.test(v) },
-        date:        function checkFormatRegex(v) { return /\d{4}-[0-1][0-2]-[0-2]\d/.test(v) },
-        time:        function checkFormatRegex(v) { return /([0-1]\d|2[0-4]):[0-5]\d:[0-5]\dZ/.test(v) },
-        utcmillisec: _.isNumber,
-        re:          _.isRegExp
+      <span class="hljs-keyword">var</span> checkmap = {
+        <span class="hljs-attr">datetime</span>:    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkFormatRegex</span>(<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-regexp">/\d{4}-(0[1-9]|1[1-2])-([0-2]\d|3[0-1])T([0-1]\d|2[0-4]):[0-5]\d:[0-5]\dZ/</span>.test(v) },
+        <span class="hljs-attr">date</span>:        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkFormatRegex</span>(<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-regexp">/\d{4}-[0-1][0-2]-[0-2]\d/</span>.test(v) },
+        <span class="hljs-attr">time</span>:        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkFormatRegex</span>(<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-regexp">/([0-1]\d|2[0-4]):[0-5]\d:[0-5]\dZ/</span>.test(v) },
+        <span class="hljs-attr">utcmillisec</span>: _.isNumber,
+        <span class="hljs-attr">re</span>:          _.isRegExp
       }
 
-      var found = 0;
-      _.each(pn, function(p){
-        var check = checkmap[p.toLowerCase()]
-        if( check ) {
+      <span class="hljs-keyword">var</span> found = <span class="hljs-number">0</span>;
+      _.each(pn, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p</span>)</span>{
+        <span class="hljs-keyword">var</span> check = checkmap[p.toLowerCase()]
+        <span class="hljs-keyword">if</span>( check ) {
           found += check(ctxt.point)
         }
       })
 
-      if( !found ) {
-        return ctxt.util.fail(ctxt,cb)
+      <span class="hljs-keyword">if</span>( !found ) {
+        <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     },
 
-    default$: function(ctxt,cb) {
-      return cb();
+    <span class="hljs-attr">default$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">return</span> cb();
     },
 
-    enum$: function(ctxt,cb) {
-      var value = ctxt.point
-      var okvals = ctxt.rule.spec
+    <span class="hljs-attr">enum$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> value = ctxt.point
+      <span class="hljs-keyword">var</span> okvals = ctxt.rule.spec
 
-      var avalue = []
+      <span class="hljs-keyword">var</span> avalue = []
 
-      if ( _.isArray(value) ) {
+      <span class="hljs-keyword">if</span> ( _.isArray(value) ) {
         avalue = value
       }
-      else {
-        avalue[0] = value
+      <span class="hljs-keyword">else</span> {
+        avalue[<span class="hljs-number">0</span>] = value
       }
 
-      var iserror = 0
-      if( avalue ) {
-        _.each(avalue, function(p){
-          iserror += (-1 == okvals.indexOf(p) )
+      <span class="hljs-keyword">var</span> iserror = <span class="hljs-number">0</span>
+      <span class="hljs-keyword">if</span>( avalue ) {
+        _.each(avalue, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p</span>)</span>{
+          iserror += (<span class="hljs-number">-1</span> == okvals.indexOf(p) )
         })
       }
-      if ( iserror ){
-        return ctxt.util.fail(ctxt,cb)
+      <span class="hljs-keyword">if</span> ( iserror ){
+        <span class="hljs-keyword">return</span> ctxt.util.fail(ctxt,cb)
       }
 
-      return cb();
+      <span class="hljs-keyword">return</span> cb();
     },</pre></div></div>
             
         </li>
@@ -439,234 +439,234 @@
             
             <div class="content"><div class='highlight'><pre>
 
-    iterate$: function(ctxt,cb) {
-      var pn = [ctxt.rule.spec.prop]
+    <span class="hljs-attr">iterate$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> pn = [ctxt.rule.spec.prop]
 
-      if( _.isObject(ctxt.point) ) {
-        if( _.isArray(ctxt.point) ) {
+      <span class="hljs-keyword">if</span>( _.isObject(ctxt.point) ) {
+        <span class="hljs-keyword">if</span>( _.isArray(ctxt.point) ) {
           pn = gex( ctxt.rule.spec.prop ).on( _.range(ctxt.point.length))
         }
-        else {
+        <span class="hljs-keyword">else</span> {
           pn = _.keys(gex( ctxt.rule.spec.prop ).on(ctxt.point))
         }
       }
 
-      var subctxt = ctxt.util.clone(ctxt)
+      <span class="hljs-keyword">var</span> subctxt = ctxt.util.clone(ctxt)
       subctxt.rules = ctxt.rule.spec.rules
 
-      function eachprop(propI) {
-        if( propI &lt; pn.length ) {
-          var p = pn[propI]
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eachprop</span>(<span class="hljs-params">propI</span>) </span>{
+        <span class="hljs-keyword">if</span>( propI &lt; pn.length ) {
+          <span class="hljs-keyword">var</span> p = pn[propI]
 
-          var psubctxt = ctxt.util.clone(subctxt)
+          <span class="hljs-keyword">var</span> psubctxt = ctxt.util.clone(subctxt)
 
-          psubctxt.parents = subctxt.parents.concat({prop:p,point:subctxt.point})
+          psubctxt.parents = subctxt.parents.concat({<span class="hljs-attr">prop</span>:p,<span class="hljs-attr">point</span>:subctxt.point})
 
           psubctxt.prop  = p
-          psubctxt.point = subctxt.point ? subctxt.point[p] : null
+          psubctxt.point = subctxt.point ? subctxt.point[p] : <span class="hljs-literal">null</span>
 
-          psubctxt.util.execrules(psubctxt,function(err){
-            if( err ) return cb(err);
-            eachprop(propI+1)
+          psubctxt.util.execrules(psubctxt,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+            <span class="hljs-keyword">if</span>( err ) <span class="hljs-keyword">return</span> cb(err);
+            eachprop(propI+<span class="hljs-number">1</span>)
           })
         }
-        else cb()
+        <span class="hljs-keyword">else</span> cb()
       }
-      eachprop(0)
+      eachprop(<span class="hljs-number">0</span>)
     },
 
 
-    recurse$: function(ctxt,cb) {
+    <span class="hljs-attr">recurse$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
 
-      var recurctxt = ctxt.util.clone(ctxt)
-      recurctxt.point = {$:ctxt.point}
-      recurse('$',recurctxt.point,cb)
+      <span class="hljs-keyword">var</span> recurctxt = ctxt.util.clone(ctxt)
+      recurctxt.point = {<span class="hljs-attr">$</span>:ctxt.point}
+      recurse(<span class="hljs-string">&#x27;$&#x27;</span>,recurctxt.point,cb)
 
-      function recurse(prop,point,cb) {
-        if( !_.isObject(point) ) {
-          return cb(null)
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">recurse</span>(<span class="hljs-params">prop,point,cb</span>) </span>{
+        <span class="hljs-keyword">if</span>( !_.isObject(point) ) {
+          <span class="hljs-keyword">return</span> cb(<span class="hljs-literal">null</span>)
         }
 
-        var pn = _.keys( point )
+        <span class="hljs-keyword">var</span> pn = _.keys( point )
 
-        var subctxt = ctxt.util.clone(ctxt)
+        <span class="hljs-keyword">var</span> subctxt = ctxt.util.clone(ctxt)
         subctxt.rules   = ctxt.rule.spec.rules
-        subctxt.parents = '$'!=prop?subctxt.parents.concat({prop:subctxt.prop,point:subctxt.point}):subctxt.parents
+        subctxt.parents = <span class="hljs-string">&#x27;$&#x27;</span>!=prop?subctxt.parents.concat({<span class="hljs-attr">prop</span>:subctxt.prop,<span class="hljs-attr">point</span>:subctxt.point}):subctxt.parents
 
-        function eachprop(propI,cb) {
-          if( propI &lt; pn.length ) {
-            var p = pn[propI]
-            var eachpropctxt = subctxt.util.clone(subctxt)
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eachprop</span>(<span class="hljs-params">propI,cb</span>) </span>{
+          <span class="hljs-keyword">if</span>( propI &lt; pn.length ) {
+            <span class="hljs-keyword">var</span> p = pn[propI]
+            <span class="hljs-keyword">var</span> eachpropctxt = subctxt.util.clone(subctxt)
             eachpropctxt.prop  = p
             eachpropctxt.point = point[p]
-            eachpropctxt.parents = '$'!=p?eachpropctxt.parents.concat({prop:subctxt.prop,point:subctxt.point}):eachpropctxt.parents
+            eachpropctxt.parents = <span class="hljs-string">&#x27;$&#x27;</span>!=p?eachpropctxt.parents.concat({<span class="hljs-attr">prop</span>:subctxt.prop,<span class="hljs-attr">point</span>:subctxt.point}):eachpropctxt.parents
 
-            eachpropctxt.util.execrules(eachpropctxt,function(err){
-              if( err ) return cb(err);
+            eachpropctxt.util.execrules(eachpropctxt,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+              <span class="hljs-keyword">if</span>( err ) <span class="hljs-keyword">return</span> cb(err);
 
-              recurse(p,eachpropctxt.point,function(err){
-                if( err ) return cb(err);
+              recurse(p,eachpropctxt.point,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+                <span class="hljs-keyword">if</span>( err ) <span class="hljs-keyword">return</span> cb(err);
 
-                eachprop(propI+1,cb)
+                eachprop(propI+<span class="hljs-number">1</span>,cb)
               })
             })
           }
-          else {
-            return cb(null)
+          <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> cb(<span class="hljs-literal">null</span>)
           }
         }
-        eachprop(0,cb)
+        eachprop(<span class="hljs-number">0</span>,cb)
       }
     },
 
 
-    descend$: function(ctxt,cb) {
-      var subctxt = ctxt.util.clone(ctxt)
-      var prop = ctxt.rule.spec.prop
+    <span class="hljs-attr">descend$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
+      <span class="hljs-keyword">var</span> subctxt = ctxt.util.clone(ctxt)
+      <span class="hljs-keyword">var</span> prop = ctxt.rule.spec.prop
 
       subctxt.rules   = ctxt.rule.spec.rules
       subctxt.prop    = prop
       subctxt.point   = ctxt.point[prop]
-      subctxt.parents = subctxt.parents.concat({prop:prop,point:ctxt.point})
+      subctxt.parents = subctxt.parents.concat({<span class="hljs-attr">prop</span>:prop,<span class="hljs-attr">point</span>:ctxt.point})
 
-      subctxt.util.execrules(subctxt,function(err){
-        if( err ) return cb(err);
-        cb(null)
+      subctxt.util.execrules(subctxt,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+        <span class="hljs-keyword">if</span>( err ) <span class="hljs-keyword">return</span> cb(err);
+        cb(<span class="hljs-literal">null</span>)
       })
     }
   }
 
 
-  var msgsmap = {
-    no_input$:   "There is no input parameter",
+  <span class="hljs-keyword">var</span> msgsmap = {
+    <span class="hljs-attr">no_input$</span>:   <span class="hljs-string">&quot;There is no input parameter&quot;</span>,
 
-    atmostone$:  "At most one of these properties can be used at a time: '&lt;%=value%&gt;'  (parent: &lt;%=parentpath%&gt;).",
-    exactlyone$: "Exactly one of these properties must be used: '&lt;%=value%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    atleastone$: "At least one of these properties is required: '&lt;%=value%&gt;' (parent: &lt;%=parentpath%&gt;).",
+    <span class="hljs-attr">atmostone$</span>:  <span class="hljs-string">&quot;At most one of these properties can be used at a time: &#x27;&lt;%=value%&gt;&#x27;  (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">exactlyone$</span>: <span class="hljs-string">&quot;Exactly one of these properties must be used: &#x27;&lt;%=value%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">atleastone$</span>: <span class="hljs-string">&quot;At least one of these properties is required: &#x27;&lt;%=value%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
 
-    required$:   "The property '&lt;%=property%&gt;' is missing and is always required (parent: &lt;%=parentpath%&gt;).",
-    notempty$:   "The property '&lt;%=property%&gt;' requires a value (parent: &lt;%=parentpath%&gt;).",
+    <span class="hljs-attr">required$</span>:   <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27; is missing and is always required (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">notempty$</span>:   <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27; requires a value (parent: &lt;%=parentpath%&gt;).&quot;</span>,
 
-    string$:     "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a string (parent: &lt;%=parentpath%&gt;).",
-    integer$:    "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a integer (parent: &lt;%=parentpath%&gt;).",
-    number$:     "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a number (parent: &lt;%=parentpath%&gt;).",
-    boolean$:    "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a boolean (parent: &lt;%=parentpath%&gt;).",
-    date$:       "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a date (parent: &lt;%=parentpath%&gt;).",
-    array$:      "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a array (parent: &lt;%=parentpath%&gt;).",
-    object$:     "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a object (parent: &lt;%=parentpath%&gt;).",
-    function$:   "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must be a function (parent: &lt;%=parentpath%&gt;).",
+    <span class="hljs-attr">string$</span>:     <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a string (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">integer$</span>:    <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a integer (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">number$</span>:     <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a number (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">boolean$</span>:    <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a boolean (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">date$</span>:       <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a date (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">array$</span>:      <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a array (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">object$</span>:     <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a object (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">function$</span>:   <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must be a function (parent: &lt;%=parentpath%&gt;).&quot;</span>,
 
-    only$:       "The property '&lt;%=property%&gt;' is not recognised here. Recognised properties are: &lt;%=rule.spec%&gt; (parent: &lt;%=parentpath%&gt;).",
+    <span class="hljs-attr">only$</span>:       <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27; is not recognised here. Recognised properties are: &lt;%=rule.spec%&gt; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
 
-    wild$:       "The value &lt;%=value%&gt; does not match the expression '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    re$:         "The value &lt;%=value%&gt; does not match the regular expression &lt;%=rule.spec%&gt; (parent: &lt;%=parentpath%&gt;).",
-    type$:       "The value &lt;%=value%&gt; is not of type '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    format$:     "The value &lt;%=value%&gt; is not of format '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
+    <span class="hljs-attr">wild$</span>:       <span class="hljs-string">&quot;The value &lt;%=value%&gt; does not match the expression &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">re$</span>:         <span class="hljs-string">&quot;The value &lt;%=value%&gt; does not match the regular expression &lt;%=rule.spec%&gt; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">type$</span>:       <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not of type &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">format$</span>:     <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not of format &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
 
-    minlen$:     "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must have minimum length '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    maxlen$:     "The property '&lt;%=property%&gt;', with current value: '&lt;%=value%&gt;', must have maximum length '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
+    <span class="hljs-attr">minlen$</span>:     <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must have minimum length &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">maxlen$</span>:     <span class="hljs-string">&quot;The property &#x27;&lt;%=property%&gt;&#x27;, with current value: &#x27;&lt;%=value%&gt;&#x27;, must have maximum length &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
 
-    eq$:         "The value &lt;%=value%&gt; does not equal '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    lt$:         "The value &lt;%=value%&gt; is not less than '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    lte$:        "The value &lt;%=value%&gt; is not less than or equal with '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    gt$:         "The value &lt;%=value%&gt; is not greater than '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    gte$:        "The value &lt;%=value%&gt; is not not greater than or equal with '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    min$:        "The value &lt;%=value%&gt; is not not greater than or equal with '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    max$:        "The value &lt;%=value%&gt; is not less than or equal with '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;).",
-    uniq$:       "The value &lt;%=value%&gt; has duplicate elements.",
-    enum$:       "The value &lt;%=value%&gt; must be one of '&lt;%=rule.spec%&gt;' (parent: &lt;%=parentpath%&gt;)."
+    <span class="hljs-attr">eq$</span>:         <span class="hljs-string">&quot;The value &lt;%=value%&gt; does not equal &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">lt$</span>:         <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not less than &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">lte$</span>:        <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not less than or equal with &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">gt$</span>:         <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not greater than &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">gte$</span>:        <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not not greater than or equal with &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">min$</span>:        <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not not greater than or equal with &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">max$</span>:        <span class="hljs-string">&quot;The value &lt;%=value%&gt; is not less than or equal with &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>,
+    <span class="hljs-attr">uniq$</span>:       <span class="hljs-string">&quot;The value &lt;%=value%&gt; has duplicate elements.&quot;</span>,
+    <span class="hljs-attr">enum$</span>:       <span class="hljs-string">&quot;The value &lt;%=value%&gt; must be one of &#x27;&lt;%=rule.spec%&gt;&#x27; (parent: &lt;%=parentpath%&gt;).&quot;</span>
 
   }
 
 
 
 
-  function clone(ctxt) {
-    var newctxt = {
-      rules:ctxt.rules,
-      point:ctxt.point,
-      msgs:ctxt.msgs,
-      log:ctxt.log,
-      parents:ctxt.parents,
-      util:ctxt.util
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clone</span>(<span class="hljs-params">ctxt</span>) </span>{
+    <span class="hljs-keyword">var</span> newctxt = {
+      <span class="hljs-attr">rules</span>:ctxt.rules,
+      <span class="hljs-attr">point</span>:ctxt.point,
+      <span class="hljs-attr">msgs</span>:ctxt.msgs,
+      <span class="hljs-attr">log</span>:ctxt.log,
+      <span class="hljs-attr">parents</span>:ctxt.parents,
+      <span class="hljs-attr">util</span>:ctxt.util
     }
-    return newctxt;
+    <span class="hljs-keyword">return</span> newctxt;
   }
 
 
-  function formatparents(parents,topname) {
-    var out = topname || 'top level'
-    if( 0 &lt; parents.length ) {
-      out = _.map(parents,function(p){return p.prop}).join('.')
-      if( topname ) {
-        out = topname+'.'+out
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatparents</span>(<span class="hljs-params">parents,topname</span>) </span>{
+    <span class="hljs-keyword">var</span> out = topname || <span class="hljs-string">&#x27;top level&#x27;</span>
+    <span class="hljs-keyword">if</span>( <span class="hljs-number">0</span> &lt; parents.length ) {
+      out = _.map(parents,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p</span>)</span>{<span class="hljs-keyword">return</span> p.prop}).join(<span class="hljs-string">&#x27;.&#x27;</span>)
+      <span class="hljs-keyword">if</span>( topname ) {
+        out = topname+<span class="hljs-string">&#x27;.&#x27;</span>+out
       }
     }
 
-    return out
+    <span class="hljs-keyword">return</span> out
   }
 
 
-  function killcircles() {
-    var seen = []
-    return function(k,v){
-      if( _.contains(seen,v) ) return '[CIRCULAR-REFERENCE]';
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">killcircles</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> seen = []
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">k,v</span>)</span>{
+      <span class="hljs-keyword">if</span>( (_.includes||_.contains)(seen,v) ) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;[CIRCULAR-REFERENCE]&#x27;</span>;
       seen.push(v)
-      return v
+      <span class="hljs-keyword">return</span> v
     }
   }
 
 
 
-  function fail() {
-    var code = arguments[0]
-    var ctxt = arguments[1]
-    var cb   = arguments[2]
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fail</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> code = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">var</span> ctxt = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>]
+    <span class="hljs-keyword">var</span> cb   = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">2</span>]
 
-    if( !cb ) {
-      ctxt = arguments[0]
-      cb   = arguments[1]
+    <span class="hljs-keyword">if</span>( !cb ) {
+      ctxt = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>]
+      cb   = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>]
       code = ctxt.rule.name
     }
 
-    if(!cb) {
-      throw new Error('Parambulator: ctxt.util.fail: callback undefined')
+    <span class="hljs-keyword">if</span>(!cb) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;Parambulator: ctxt.util.fail: callback undefined&#x27;</span>)
     }
 
-    if(!ctxt) {
-      return cb(new Error('Parambulator: ctxt.util.fail: ctxt undefined'))
+    <span class="hljs-keyword">if</span>(!ctxt) {
+      <span class="hljs-keyword">return</span> cb(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;Parambulator: ctxt.util.fail: ctxt undefined&#x27;</span>))
     }
 
-    var inserts = {
-      property:ctxt.prop,
-      value:ctxt.value||JSON.stringify(ctxt.point,killcircles()),
-      point:ctxt.point,
-      rule:ctxt.rule,
-      parentpath:ctxt.util.formatparents(ctxt.parents),
-      json:function(v){return JSON.stringify(v,killcircles())}
+    <span class="hljs-keyword">var</span> inserts = {
+      <span class="hljs-attr">property</span>:ctxt.prop,
+      <span class="hljs-attr">value</span>:ctxt.value||<span class="hljs-built_in">JSON</span>.stringify(ctxt.point,killcircles()),
+      <span class="hljs-attr">point</span>:ctxt.point,
+      <span class="hljs-attr">rule</span>:ctxt.rule,
+      <span class="hljs-attr">parentpath</span>:ctxt.util.formatparents(ctxt.parents),
+      <span class="hljs-attr">json</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-built_in">JSON</span>.stringify(v,killcircles())}
     }
 
-    var msg = ctxt.msgs[code] || code
+    <span class="hljs-keyword">var</span> msg = ctxt.msgs[code] || code
 
-    if( _.isFunction(msg) ) {
+    <span class="hljs-keyword">if</span>( _.isFunction(msg) ) {
       msg = msg(inserts,ctxt)
     }
-    else {
+    <span class="hljs-keyword">else</span> {
       msg = ctxt.util.msgmods( msg )
-      msg = _.template(msg,inserts)
+      msg = _.template(msg)(inserts)
     }
 
-    var err = new Error( msg )
+    <span class="hljs-keyword">var</span> err = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>( msg )
 
     err.parambulator = {
-      code:     code,
-      property: ctxt.prop,
-      value:    ctxt.point,
-      expected: (ctxt.rule ? ctxt.rule.spec : void 0),
-      parents:  ctxt.parents,
-      point:    ctxt.point,
-      rule:     ctxt.rule}
-    return cb(err)
+      <span class="hljs-attr">code</span>:     code,
+      <span class="hljs-attr">property</span>: ctxt.prop,
+      <span class="hljs-attr">value</span>:    ctxt.point,
+      <span class="hljs-attr">expected</span>: (ctxt.rule ? ctxt.rule.spec : <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>),
+      <span class="hljs-attr">parents</span>:  ctxt.parents,
+      <span class="hljs-attr">point</span>:    ctxt.point,
+      <span class="hljs-attr">rule</span>:     ctxt.rule}
+    <span class="hljs-keyword">return</span> cb(err)
   }</pre></div></div>
             
         </li>
@@ -688,7 +688,7 @@ object.</p>
     <span class="hljs-keyword">var</span> pn = []
     <span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> p <span class="hljs-keyword">in</span> obj ) {
       <span class="hljs-keyword">var</span> pc = p
-      <span class="hljs-keyword">if</span>( <span class="hljs-number">0</span> === p.indexOf(<span class="hljs-string">'__'</span>) ) {
+      <span class="hljs-keyword">if</span>( <span class="hljs-number">0</span> === p.indexOf(<span class="hljs-string">&#x27;__&#x27;</span>) ) {
         pc = p.substring(<span class="hljs-number">2</span>)
         obj[pc] = obj[p]
         <span class="hljs-keyword">delete</span> obj[p]
@@ -715,16 +715,12 @@ object.</p>
     }
 
     <span class="hljs-keyword">if</span>( !spec || !_.isObject(spec) || _.isArray(spec) ) {
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Parambulator: spec argument is not an object'</span>)
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;Parambulator: spec argument is not an object&#x27;</span>)
     }
 
-    <span class="hljs-comment">/*
-     if( exp.ownparams ) {
-     exp.ownparams.validate(spec,function(err){
-     if( err ) throw err;
-     })
-     }
-     */</span>
+    <span class="hljs-keyword">if</span>( _.cloneDeep ) {
+      spec = _.cloneDeep(spec)
+    }
 
     <span class="hljs-keyword">if</span>( pref ) {
       <span class="hljs-keyword">if</span>( exp.ownprefs ) {
@@ -734,7 +730,7 @@ object.</p>
       }
 
       <span class="hljs-keyword">if</span>( pref.valid &amp;&amp; exp ) {
-        <span class="hljs-keyword">var</span> prefparams = exp({<span class="hljs-string">'**'</span>:pref.valid})
+        <span class="hljs-keyword">var</span> prefparams = exp({<span class="hljs-string">&#x27;**&#x27;</span>:pref.valid})
         prefparams.validate(spec,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
           <span class="hljs-keyword">if</span>( err ) <span class="hljs-keyword">throw</span> err;
         })
@@ -765,20 +761,20 @@ object.</p>
 
     <span class="hljs-comment">/*
      * Example:
-     * For a: {default$:123, type$:'number'}
-     * creates {"pathnames":["a"],"pathtypes":[],"defaultvalue":123}
+     * For a: {default$:123, type$:&#x27;number&#x27;}
+     * creates {&quot;pathnames&quot;:[&quot;a&quot;],&quot;pathtypes&quot;:[],&quot;defaultvalue&quot;:123}
      *
-     * for d: {type$: 'array', __0: {default$:'arraytest0'}}
-     * creates {"pathnames":["d","0"],"pathtypes":["array"],"defaultvalue":"arraytest0"}
+     * for d: {type$: &#x27;array&#x27;, __0: {default$:&#x27;arraytest0&#x27;}}
+     * creates {&quot;pathnames&quot;:[&quot;d&quot;,&quot;0&quot;],&quot;pathtypes&quot;:[&quot;array&quot;],&quot;defaultvalue&quot;:&quot;arraytest0&quot;}
      */</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parsedefault</span>(<span class="hljs-params">spec, path, pathtypes</span>)</span>{
       <span class="hljs-keyword">var</span> innerulenames = []
-      <span class="hljs-keyword">var</span> currentruletype = <span class="hljs-string">'object'</span>
+      <span class="hljs-keyword">var</span> currentruletype = <span class="hljs-string">&#x27;object&#x27;</span>
 
       <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> name <span class="hljs-keyword">in</span> spec){
         <span class="hljs-keyword">if</span>(spec.hasOwnProperty(name)) {
           <span class="hljs-keyword">var</span> rule = spec[name]
-          <span class="hljs-keyword">if</span> (<span class="hljs-string">'default$'</span> == name){
+          <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;default$&#x27;</span> == name){
             <span class="hljs-keyword">var</span> defaultrule = {}
             defaultrule.pathnames = path
 
@@ -786,7 +782,7 @@ object.</p>
             defaultrule.defaultvalue = rule
             defaultrules.push(defaultrule)
           }
-          <span class="hljs-keyword">if</span> (<span class="hljs-string">'type$'</span> == name){
+          <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;type$&#x27;</span> == name){
             currentruletype = rule
           }
           <span class="hljs-keyword">if</span>( _.isObject(rule) &amp;&amp; !_.isArray(rule) ) {
@@ -818,14 +814,14 @@ object.</p>
 
       <span class="hljs-keyword">if</span>( func ) {
         <span class="hljs-keyword">var</span> rule = {
-          func:func,
-          name:name,
-          spec:rulespec
+          <span class="hljs-attr">func</span>:func,
+          <span class="hljs-attr">name</span>:name,
+          <span class="hljs-attr">spec</span>:rulespec
         }
         <span class="hljs-keyword">return</span> rule
       }
       <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Parambulator: Unknown rule: "</span>+name)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Parambulator: Unknown rule: &quot;</span>+name)
       }
     }
 
@@ -849,7 +845,7 @@ object.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>( <span class="hljs-string">'list$'</span> == name ) {
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>( <span class="hljs-string">&#x27;list$&#x27;</span> == name ) {
           <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; rulespec.length; i++) {
             <span class="hljs-keyword">var</span> rs = {}
             rs[rulespec[i][<span class="hljs-number">0</span>]]=rulespec[i][<span class="hljs-number">1</span>]
@@ -870,9 +866,9 @@ object.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( <span class="hljs-string">'prop$'</span> == name ) {
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( <span class="hljs-string">&#x27;prop$&#x27;</span> == name ) {
           <span class="hljs-keyword">var</span> subrules = parse( rulespec.rules )
-          <span class="hljs-keyword">var</span> rule = buildrule(<span class="hljs-string">'descend$'</span>,{prop:rulespec.name,rules:subrules})
+          <span class="hljs-keyword">var</span> rule = buildrule(<span class="hljs-string">&#x27;descend$&#x27;</span>,{<span class="hljs-attr">prop</span>:rulespec.name,<span class="hljs-attr">rules</span>:subrules})
           rules.push(rule)
         }</pre></div></div>
             
@@ -890,7 +886,7 @@ object.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( name.match(<span class="hljs-regexp">/\$$/</span>) ) {
-          <span class="hljs-keyword">if</span>((name === <span class="hljs-string">'required$'</span> || name === <span class="hljs-string">'notempty$'</span>) &amp;&amp; 
+          <span class="hljs-keyword">if</span>((name === <span class="hljs-string">&#x27;required$&#x27;</span> || name === <span class="hljs-string">&#x27;notempty$&#x27;</span>) &amp;&amp; 
              pref.multiErrors &amp;&amp; 
              _.isArray(rulespec)) 
           {
@@ -906,10 +902,10 @@ object.</p>
         }
 
 
-        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( <span class="hljs-string">'**'</span> == name ) {
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( <span class="hljs-string">&#x27;**&#x27;</span> == name ) {
           <span class="hljs-keyword">var</span> starstar_subrules = parse( rulespec )
           <span class="hljs-keyword">var</span> starstar_rule = 
-                buildrule(<span class="hljs-string">'recurse$'</span>,{prop:name,rules:starstar_subrules})
+                buildrule(<span class="hljs-string">&#x27;recurse$&#x27;</span>,{<span class="hljs-attr">prop</span>:name,<span class="hljs-attr">rules</span>:starstar_subrules})
           rules.push(starstar_rule)
         }</pre></div></div>
             
@@ -938,7 +934,7 @@ object.</p>
             })
 
             <span class="hljs-keyword">var</span> prop_subrules = parse( rulespec )
-            <span class="hljs-keyword">var</span> prop_rule = buildrule(<span class="hljs-string">'iterate$'</span>,{prop:name,rules:prop_subrules})
+            <span class="hljs-keyword">var</span> prop_rule = buildrule(<span class="hljs-string">&#x27;iterate$&#x27;</span>,{<span class="hljs-attr">prop</span>:name,<span class="hljs-attr">rules</span>:prop_subrules})
             rules.push(prop_rule)
           }
 
@@ -979,8 +975,8 @@ object.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">else</span> {
-              rules.push( buildrule(<span class="hljs-string">'descend$'</span>,{
-                prop:name,rules:[buildrule(<span class="hljs-string">'wild$'</span>,rulespec)]
+              rules.push( buildrule(<span class="hljs-string">&#x27;descend$&#x27;</span>,{
+                <span class="hljs-attr">prop</span>:name,<span class="hljs-attr">rules</span>:[buildrule(<span class="hljs-string">&#x27;wild$&#x27;</span>,rulespec)]
               }))
             }
           }</pre></div></div>
@@ -1000,19 +996,19 @@ object.</p>
             
             <div class="content"><div class='highlight'><pre>
           <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( _.isNumber(rulespec) ) {
-            rules.push( buildrule(<span class="hljs-string">'descend$'</span>,{
-              prop:name,rules:[buildrule(<span class="hljs-string">'eq$'</span>,rulespec)]
+            rules.push( buildrule(<span class="hljs-string">&#x27;descend$&#x27;</span>,{
+              <span class="hljs-attr">prop</span>:name,<span class="hljs-attr">rules</span>:[buildrule(<span class="hljs-string">&#x27;eq$&#x27;</span>,rulespec)]
             }))
           }
 
           <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( _.isBoolean(rulespec) ) {
-            rules.push( buildrule(<span class="hljs-string">'descend$'</span>,{
-              prop:name,rules:[buildrule(<span class="hljs-string">'eq$'</span>,rulespec)]
+            rules.push( buildrule(<span class="hljs-string">&#x27;descend$&#x27;</span>,{
+              <span class="hljs-attr">prop</span>:name,<span class="hljs-attr">rules</span>:[buildrule(<span class="hljs-string">&#x27;eq$&#x27;</span>,rulespec)]
             }))
           }
 
           <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Parambulator: Unrecognized rule specification: "</span>+rulespec)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Parambulator: Unrecognized rule specification: &quot;</span>+rulespec)
           }
         }
 
@@ -1051,7 +1047,7 @@ object.</p>
 
       <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execrules</span>(<span class="hljs-params">ctxt,cb</span>) </span>{
         <span class="hljs-keyword">if</span>( _.isUndefined(args) ) {
-          <span class="hljs-keyword">return</span> fail(<span class="hljs-string">'no_input$'</span>,ctxt,cb)
+          <span class="hljs-keyword">return</span> fail(<span class="hljs-string">&#x27;no_input$&#x27;</span>,ctxt,cb)
         }
 
         <span class="hljs-keyword">var</span> rules = ctxt.rules
@@ -1068,7 +1064,7 @@ object.</p>
 
             <span class="hljs-keyword">var</span> specstr = <span class="hljs-built_in">JSON</span>.stringify(rule.spec,killcircles())
 
-            ctxt.log.push(<span class="hljs-string">'rule:'</span>+rule.name+<span class="hljs-string">':exec:'</span>+specstr)
+            ctxt.log.push(<span class="hljs-string">&#x27;rule:&#x27;</span>+rule.name+<span class="hljs-string">&#x27;:exec:&#x27;</span>+specstr)
 
             rule.func(ctxt, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
               <span class="hljs-keyword">if</span>( err ) {
@@ -1090,22 +1086,22 @@ errors = errors.concat(err)</p>
             
             <div class="content"><div class='highlight'><pre>                } <span class="hljs-keyword">else</span> {
                   errors.push(err)
-                  ctxt.log.push(<span class="hljs-string">'rule:'</span>+rule.name+<span class="hljs-string">':fail:'</span>+specstr)
+                  ctxt.log.push(<span class="hljs-string">&#x27;rule:&#x27;</span>+rule.name+<span class="hljs-string">&#x27;:fail:&#x27;</span>+specstr)
                 }
                 execrule(ruleI+<span class="hljs-number">1</span>)
               }
               <span class="hljs-keyword">else</span> {
-                ctxt.log.push(<span class="hljs-string">'rule:'</span>+rule.name+<span class="hljs-string">':pass:'</span>+specstr)
+                ctxt.log.push(<span class="hljs-string">&#x27;rule:&#x27;</span>+rule.name+<span class="hljs-string">&#x27;:pass:&#x27;</span>+specstr)
                 execrule(ruleI+<span class="hljs-number">1</span>)
               }
             })
           }
           <span class="hljs-keyword">else</span> {
             <span class="hljs-keyword">if</span>(errors.length &gt; <span class="hljs-number">0</span> &amp;&amp; pref.multiErrors) {
-              cb(errors,{log:ctxt.log})
+              cb(errors,{<span class="hljs-attr">log</span>:ctxt.log})
             } <span class="hljs-keyword">else</span> {
               <span class="hljs-keyword">var</span> err = errors.length &gt; <span class="hljs-number">0</span> ? errors[<span class="hljs-number">0</span>] : <span class="hljs-literal">null</span>;
-              cb(err,{log:ctxt.log})
+              cb(err,{<span class="hljs-attr">log</span>:ctxt.log})
             }
 
           }
@@ -1116,11 +1112,11 @@ errors = errors.concat(err)</p>
 
       <span class="hljs-comment">/*
        * Example:
-       * For a: {"pathnames":["a"],"pathtypes":[],"defaultvalue":123}
+       * For a: {&quot;pathnames&quot;:[&quot;a&quot;],&quot;pathtypes&quot;:[],&quot;defaultvalue&quot;:123}
        * creates {a:123}
        *
-       * for d: {"pathnames":["d","0"],"pathtypes":["array"],"defaultvalue":"arraytest0"}
-       * creates {d: ['arraytest0']}
+       * for d: {&quot;pathnames&quot;:[&quot;d&quot;,&quot;0&quot;],&quot;pathtypes&quot;:[&quot;array&quot;],&quot;defaultvalue&quot;:&quot;arraytest0&quot;}
+       * creates {d: [&#x27;arraytest0&#x27;]}
        */</span>
       <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validatedefaults</span>(<span class="hljs-params">ctxt, cb</span>)</span>{
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> ruleindex <span class="hljs-keyword">in</span> defaultrules){
@@ -1164,10 +1160,10 @@ errors = errors.concat(err)</p>
             <div class="content"><div class='highlight'><pre>              <span class="hljs-keyword">else</span>{
                 <span class="hljs-keyword">var</span> type = rule.pathtypes[index]
                 <span class="hljs-keyword">var</span> newobj
-                <span class="hljs-keyword">if</span> (<span class="hljs-string">'object'</span> == type){
+                <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;object&#x27;</span> == type){
                   newobj = {}
                 }
-                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">'array'</span> == type){
+                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;array&#x27;</span> == type){
                   newobj = []
                 }
                 <span class="hljs-keyword">else</span>{</pre></div></div>
@@ -1185,7 +1181,7 @@ errors = errors.concat(err)</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>                  ctxt.util.fail(<span class="hljs-string">'default$'</span>,ctxt,cb)
+            <div class="content"><div class='highlight'><pre>                  ctxt.util.fail(<span class="hljs-string">&#x27;default$&#x27;</span>,ctxt,cb)
                   <span class="hljs-keyword">return</span>;
                 }
                 obj[location] = newobj
@@ -1200,25 +1196,25 @@ errors = errors.concat(err)</p>
         cb();
       }
 
-      <span class="hljs-keyword">var</span> ctxt = {rules:rules,point:args,msgs:msgs,log:[],parents:[]}
+      <span class="hljs-keyword">var</span> ctxt = {<span class="hljs-attr">rules</span>:rules,<span class="hljs-attr">point</span>:args,<span class="hljs-attr">msgs</span>:msgs,<span class="hljs-attr">log</span>:[],<span class="hljs-attr">parents</span>:[]}
       ctxt.util = {
-        formatparents:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-attr">formatparents</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
           <span class="hljs-keyword">var</span> args = arrayify(<span class="hljs-built_in">arguments</span>)
           args[<span class="hljs-number">1</span>] = pref &amp;&amp; pref.topname &amp;&amp; !args[<span class="hljs-number">1</span>] ? pref.topname : args[<span class="hljs-number">1</span>]
           <span class="hljs-keyword">return</span> formatparents.apply(<span class="hljs-literal">null</span>,args)
         },
-        msgmods:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">msg</span>) </span>{
-          <span class="hljs-keyword">return</span> (pref.msgprefix||<span class="hljs-string">''</span>) + msg + (pref.msgsuffix||<span class="hljs-string">''</span>)
+        <span class="hljs-attr">msgmods</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">msg</span>) </span>{
+          <span class="hljs-keyword">return</span> (pref.msgprefix||<span class="hljs-string">&#x27;&#x27;</span>) + msg + (pref.msgsuffix||<span class="hljs-string">&#x27;&#x27;</span>)
         },
-        fail:fail,proplist:proplist,execrules:execrules,clone:clone}
+        <span class="hljs-attr">fail</span>:fail,<span class="hljs-attr">proplist</span>:proplist,<span class="hljs-attr">execrules</span>:execrules,<span class="hljs-attr">clone</span>:clone}
 
       validatedefaults(ctxt,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
         <span class="hljs-keyword">if</span> (err){
-          wrapcb(err,{log:ctxt.log})
+          wrapcb(err,{<span class="hljs-attr">log</span>:ctxt.log})
         }
         <span class="hljs-keyword">else</span> {
           execrules(ctxt,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
-            wrapcb(err,{log:ctxt.log})
+            wrapcb(err,{<span class="hljs-attr">log</span>:ctxt.log})
           })
         }
       })</pre></div></div>
@@ -1246,7 +1242,7 @@ errors = errors.concat(err)</p>
 
   <span class="hljs-keyword">var</span> exp = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
     <span class="hljs-keyword">var</span> args = arrayify(<span class="hljs-built_in">arguments</span>)
-    <span class="hljs-keyword">return</span> Parambulator.apply(<span class="hljs-keyword">this</span>,args)
+    <span class="hljs-keyword">return</span> Parambulator.apply(<span class="hljs-built_in">this</span>,args)
   }</pre></div></div>
             
         </li>
@@ -1263,23 +1259,23 @@ errors = errors.concat(err)</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  exp.ownparams = <span class="hljs-keyword">new</span> Parambulator({
-    <span class="hljs-string">'**'</span>:
+    <span class="hljs-string">&#x27;**&#x27;</span>:
     {
-      strings$: [<span class="hljs-string">'required$'</span>,<span class="hljs-string">'notempty$'</span>,<span class="hljs-string">'atmostone$'</span>,<span class="hljs-string">'exactlyone$'</span>,<span class="hljs-string">'atleastone$'</span>],
-      list$:[
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'wild$'</span>, rules:{type$:<span class="hljs-string">'string'</span>}}],
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'type$'</span>, rules:{type$:[<span class="hljs-string">'string'</span>,<span class="hljs-string">'array'</span>]}}],
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'format$'</span>, rules:{type$:[<span class="hljs-string">'string'</span>,<span class="hljs-string">'array'</span>]}}],
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'re$'</span>,   rules:{type$:<span class="hljs-string">'string'</span>}}],
+      <span class="hljs-attr">strings$</span>: [<span class="hljs-string">&#x27;required$&#x27;</span>,<span class="hljs-string">&#x27;notempty$&#x27;</span>,<span class="hljs-string">&#x27;atmostone$&#x27;</span>,<span class="hljs-string">&#x27;exactlyone$&#x27;</span>,<span class="hljs-string">&#x27;atleastone$&#x27;</span>],
+      <span class="hljs-attr">list$</span>:[
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;wild$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:<span class="hljs-string">&#x27;string&#x27;</span>}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;type$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:[<span class="hljs-string">&#x27;string&#x27;</span>,<span class="hljs-string">&#x27;array&#x27;</span>]}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;format$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:[<span class="hljs-string">&#x27;string&#x27;</span>,<span class="hljs-string">&#x27;array&#x27;</span>]}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;re$&#x27;</span>,   <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:<span class="hljs-string">&#x27;string&#x27;</span>}}],
 
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'type$'</span>, rules:{enum$:[<span class="hljs-string">'string'</span>,<span class="hljs-string">'number'</span>,<span class="hljs-string">'integer'</span>,<span class="hljs-string">'boolean'</span>,<span class="hljs-string">'date'</span>,<span class="hljs-string">'array'</span>,<span class="hljs-string">'object'</span>,]}}],
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'format$'</span>, rules:{enum$:[<span class="hljs-string">'datetime'</span>,<span class="hljs-string">'date'</span>,<span class="hljs-string">'time'</span>,<span class="hljs-string">'utcmillisec'</span>, <span class="hljs-string">'re'</span>]}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;type$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">enum$</span>:[<span class="hljs-string">&#x27;string&#x27;</span>,<span class="hljs-string">&#x27;number&#x27;</span>,<span class="hljs-string">&#x27;integer&#x27;</span>,<span class="hljs-string">&#x27;boolean&#x27;</span>,<span class="hljs-string">&#x27;date&#x27;</span>,<span class="hljs-string">&#x27;array&#x27;</span>,<span class="hljs-string">&#x27;object&#x27;</span>,]}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;format$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">enum$</span>:[<span class="hljs-string">&#x27;datetime&#x27;</span>,<span class="hljs-string">&#x27;date&#x27;</span>,<span class="hljs-string">&#x27;time&#x27;</span>,<span class="hljs-string">&#x27;utcmillisec&#x27;</span>, <span class="hljs-string">&#x27;re&#x27;</span>]}}],
 
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'minlen$'</span>, rules:{type$:<span class="hljs-string">'number'</span>}}],
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'maxlen$'</span>, rules:{type$:<span class="hljs-string">'number'</span>}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;minlen$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:<span class="hljs-string">&#x27;number&#x27;</span>}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;maxlen$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:<span class="hljs-string">&#x27;number&#x27;</span>}}],
 
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'enum$'</span>, rules:{type$:<span class="hljs-string">'array'</span>}}],
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'list$'</span>, rules:{type$:<span class="hljs-string">'array'</span>}}],</pre></div></div>
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;enum$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:<span class="hljs-string">&#x27;array&#x27;</span>}}],
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;list$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:<span class="hljs-string">&#x27;array&#x27;</span>}}],</pre></div></div>
             
         </li>
         
@@ -1302,17 +1298,17 @@ these should also work for strings, right?
             </div>
             
             <div class="content"><div class='highlight'><pre>
-        [<span class="hljs-string">'prop$'</span>,{name:<span class="hljs-string">'uniq$'</span>, rules:{type$:<span class="hljs-string">'array'</span>}}]
+        [<span class="hljs-string">&#x27;prop$&#x27;</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;uniq$&#x27;</span>, <span class="hljs-attr">rules</span>:{<span class="hljs-attr">type$</span>:<span class="hljs-string">&#x27;array&#x27;</span>}}]
       ]
     }
   }, {
-    __ownparams__:<span class="hljs-literal">true</span>,
-    rules: {
-      strings$: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>)</span>{
+    <span class="hljs-attr">__ownparams__</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-attr">rules</span>: {
+      <span class="hljs-attr">strings$</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctxt,cb</span>)</span>{
         <span class="hljs-keyword">var</span> pn = ctxt.rule.spec
 
         <span class="hljs-keyword">if</span>( !_.isArray(pn) ) {
-          pn = [<span class="hljs-string">''</span>+pn]
+          pn = [<span class="hljs-string">&#x27;&#x27;</span>+pn]
         }
 
         <span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> pI = <span class="hljs-number">0</span>; pI &lt; pn.length; pI++ ) {
@@ -1354,10 +1350,10 @@ these should also work for strings, right?
         cb(<span class="hljs-literal">null</span>)
       }
     },
-    msgs: {
-      <span class="hljs-string">'strings$'</span>: <span class="hljs-string">'The &lt;%=property%&gt; rule needs a string or array of strings (property: &lt;%=parentpath%&gt;).'</span>
+    <span class="hljs-attr">msgs</span>: {
+      <span class="hljs-string">&#x27;strings$&#x27;</span>: <span class="hljs-string">&#x27;The &lt;%=property%&gt; rule needs a string or array of strings (property: &lt;%=parentpath%&gt;).&#x27;</span>
     },
-    topname:<span class="hljs-string">'spec'</span>
+    <span class="hljs-attr">topname</span>:<span class="hljs-string">&#x27;spec&#x27;</span>
   })</pre></div></div>
             
         </li>
@@ -1373,14 +1369,14 @@ these should also work for strings, right?
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  exp.ownprefs = new Parambulator({
-    object$:['valid','rules','msgs'],
-    string$:['topname','msgprefix','msgsuffix'],
-    boolean$:['multiErrors'],
-    function$:['callbackmaker'],
-    only$:['valid','rules','msgs', 'topname','msgprefix','msgsuffix', 'multiErrors', 'callbackmaker']
+            <div class="content"><div class='highlight'><pre>  exp.ownprefs = <span class="hljs-keyword">new</span> Parambulator({
+    <span class="hljs-attr">object$</span>:[<span class="hljs-string">&#x27;valid&#x27;</span>,<span class="hljs-string">&#x27;rules&#x27;</span>,<span class="hljs-string">&#x27;msgs&#x27;</span>],
+    <span class="hljs-attr">string$</span>:[<span class="hljs-string">&#x27;topname&#x27;</span>,<span class="hljs-string">&#x27;msgprefix&#x27;</span>,<span class="hljs-string">&#x27;msgsuffix&#x27;</span>],
+    <span class="hljs-attr">boolean$</span>:[<span class="hljs-string">&#x27;multiErrors&#x27;</span>],
+    <span class="hljs-attr">function$</span>:[<span class="hljs-string">&#x27;callbackmaker&#x27;</span>],
+    <span class="hljs-attr">only$</span>:[<span class="hljs-string">&#x27;valid&#x27;</span>,<span class="hljs-string">&#x27;rules&#x27;</span>,<span class="hljs-string">&#x27;msgs&#x27;</span>, <span class="hljs-string">&#x27;topname&#x27;</span>,<span class="hljs-string">&#x27;msgprefix&#x27;</span>,<span class="hljs-string">&#x27;msgsuffix&#x27;</span>, <span class="hljs-string">&#x27;multiErrors&#x27;</span>, <span class="hljs-string">&#x27;callbackmaker&#x27;</span>]
   },{
-    topname:'prefs'
+    <span class="hljs-attr">topname</span>:<span class="hljs-string">&#x27;prefs&#x27;</span>
   })
 
   exp.Parambulator = Parambulator</pre></div></div>
@@ -1404,22 +1400,22 @@ these should also work for strings, right?
   root.parambulator = exp
 
   exp.noConflict = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    root.previous_parambulator = previous_parambulator;
+    root.parambulator = previous_parambulator;
     <span class="hljs-keyword">return</span> self;
   }
 
 
-  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> exports !== <span class="hljs-string">'undefined'</span> ) {
-    <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> !== <span class="hljs-string">'undefined'</span> &amp;&amp; <span class="hljs-built_in">module</span>.exports ) {
-      exports = <span class="hljs-built_in">module</span>.exports = exp
+  <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">exports</span> !== <span class="hljs-string">&#x27;undefined&#x27;</span> ) {
+    <span class="hljs-keyword">if</span>( <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> !== <span class="hljs-string">&#x27;undefined&#x27;</span> &amp;&amp; <span class="hljs-built_in">module</span>.exports ) {
+      <span class="hljs-built_in">exports</span> = <span class="hljs-built_in">module</span>.exports = exp
     }
-    exports.parambulator = exp
+    <span class="hljs-built_in">exports</span>.parambulator = exp
   }
   <span class="hljs-keyword">else</span> {
     root.parambulator = exp
   }
 
-}).call(<span class="hljs-keyword">this</span>);</pre></div></div>
+}).call(<span class="hljs-built_in">this</span>);</pre></div></div>
             
         </li>
         
