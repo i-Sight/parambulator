@@ -1,2 +1,0 @@
-- name: npm audit action
-  uses: oke-py/npm-audit-action@v1.5.0
