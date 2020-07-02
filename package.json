@@ -31,7 +31,6 @@
     "parambulator.js"
   ],
   "devDependencies": {
-    "chai": "^4.2.0",
     "docco": "0.8.0",
     "jasmine": "^3.5.0",
     "jshint": "2.11.1",

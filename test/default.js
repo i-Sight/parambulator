@@ -11,8 +11,6 @@ if( 'undefined' === typeof _ ) {
 	var _ = require('lodash')
 }
 
-// const assert = require('chai').assert;
-
 var assert = {
 	isNull: function(x){
 	  expect(x).toBe(null)
