@@ -17,7 +17,7 @@ jobs:
         run: npm ci
       - uses: oke-py/npm-audit-action@v1.5.0
         with:
-          audit_level: low
+          audit_level: moderate
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # issue_assignees: oke-py // not needed
           issue_labels: vulnerability,test
