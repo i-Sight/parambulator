@@ -19,6 +19,6 @@ jobs:
         with:
           audit_level: low
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          issue_assignees: oke-py
+          # issue_assignees: oke-py // not needed
           issue_labels: vulnerability,test
           dedupe_issues: true
