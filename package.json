@@ -31,8 +31,9 @@
     "parambulator.js"
   ],
   "devDependencies": {
+    "chai": "^4.2.0",
     "docco": "0.8.0",
-    "jasmine-node": "3.0.0",
+    "jasmine": "^3.5.0",
     "jshint": "2.11.1",
     "phantomjs-prebuilt": "2.1.16",
     "uglify-js": "3.10.0"
@@ -42,7 +43,7 @@
     "build:lint": "jshint parambulator.js",
     "build:document": "docco parambulator.js -o doc",
     "build": "npm run build:minify; npm run build:lint; npm run build:document;",
-    "test:unit": "jasmine-node ./test",
+    "test:unit": "jasmine",
     "test:end-2-end": "phantomjs test/run-jasmine.js test/jasmine.html",
     "test": "npm run test:unit; npm run test:end-2-end;"
   }
