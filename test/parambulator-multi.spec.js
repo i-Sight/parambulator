@@ -22,10 +22,10 @@ var assert = {
     expect(x).toBe(null)
   },
   isNotNull: function(x){
-    expect(x).toNotBe(null)
+    expect(x).not.toBe(null)
   },
   equal: function(x,y){
-    expect(x).toBe(y)
+    expect(x == y).toBe(true)
   },
   isTrue: function(x){
     expect(!!x).toBe(true)
