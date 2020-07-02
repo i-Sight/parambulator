@@ -1383,10 +1383,3 @@ describe('parambulator', function() {
   })
 
 })
-
-
-// describe(' test suite', ()=>{
-// 	it('random test', ()=>{
-// 		expect('akash').toEqual('akash');
-// 	})
-// })
