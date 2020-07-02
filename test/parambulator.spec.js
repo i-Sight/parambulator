@@ -1,5 +1,4 @@
 /* Copyright (c) 2014-2015 Richard Rodger, MIT License */
-"use strict";
 
 
 if( 'undefined' === typeof parambulator ) {
@@ -11,30 +10,23 @@ if( 'undefined' === typeof _ ) {
   var _ = require('lodash')
 }
 
-
-function s(obj){
-  return JSON.stringify(obj)
-}
-
-
 var assert = {
-  isNull: function(x){
-    expect(x).toBe(null)
-  },
-  isNotNull: function(x){
-    expect(x).toNotBe(null)
-  },
-  equal: function(x,y){
-    expect(x).toBe(y)
-  },
-  isTrue: function(x){
-    expect(!!x).toBe(true)
-  },
-  ok: function(x){
-    expect(!!x).toBe(true)
-  },
+	isNull: function(x){
+	  expect(x).toBe(null)
+	},
+	isNotNull: function(x){
+	  expect(x).not.toBe(null)
+	},
+	equal: function(x,y){
+	  expect(x == y).toBe(true)
+	},
+	isTrue: function(x){
+	  expect(!!x).toBe(true)
+	},
+	ok: function(x){
+	  expect(!!x).toBe(true)
+	},
 }
-
 
 describe('parambulator', function() {
 
@@ -1392,3 +1384,9 @@ describe('parambulator', function() {
 
 })
 
+
+// describe(' test suite', ()=>{
+// 	it('random test', ()=>{
+// 		expect('akash').toEqual('akash');
+// 	})
+// })

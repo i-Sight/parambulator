@@ -2,11 +2,27 @@
 
 "use strict";
 
+if( 'undefined' === typeof parambulator ) {
+	var parambulator = require('..')
+}
 
-var assert = require('assert')
-
-var parambulator = require('..')
-
+var assert = {
+	isNull: function(x){
+	  expect(x).toBe(null)
+	},
+	isNotNull: function(x){
+	  expect(x).not.toBe(null)
+	},
+	equal: function(x,y){
+	  expect(x == y).toBe(true)
+	},
+	isTrue: function(x){
+	  expect(!!x).toBe(true)
+	},
+	ok: function(x){
+	  expect(!!x).toBe(true)
+	},
+}
 
 describe('string-rulespec', function() {
 

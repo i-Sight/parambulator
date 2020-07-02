@@ -3,13 +3,27 @@
 "use strict";
 
 
-var assert = require('chai').assert
-var gex    = require('gex')
-var _      = require('underscore')
+if( 'undefined' === typeof parambulator ) {
+	var parambulator = require('..')
+}
 
-var parambulator = require('..')
-
-
+var assert = {
+	isNull: function(x){
+	  expect(x).toBe(null)
+	},
+	isNotNull: function(x){
+	  expect(x).not.toBe(null)
+	},
+	equal: function(x,y){
+	  expect(x == y).toBe(true)
+	},
+	isTrue: function(x){
+	  expect(!!x).toBe(true)
+	},
+	ok: function(x){
+	  expect(!!x).toBe(true)
+	},
+}
 
 describe('ownparams', function() {
 
