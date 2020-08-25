@@ -14,13 +14,13 @@
   "contributors": [
     "Richard Rodger (http://richardrodger.com/)"
   ],
-  "version": "1.5.2",
+  "version": "1.5.5-isight",
   "main": "parambulator.js",
   "repository": {
     "url": "https://github.com/rjrodger/parambulator.git"
   },
   "dependencies": {
-    "gex": "git://github.com/i-Sight/gex.git#v1.0.1-isight",
+    "gex": "git://github.com/i-Sight/gex.git#v1.0.2-isight",
     "jsonic": "0.3.1",
     "lodash": "4.17.15"
   },
