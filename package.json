@@ -31,7 +31,7 @@
     "parambulator.js"
   ],
   "devDependencies": {
-    "docco": "0.8.0",
+    "docco": "0.9.1",
     "jasmine": "^3.5.0",
     "jshint": "2.13.6",
     "karma": "6.4.4",
