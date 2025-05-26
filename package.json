@@ -14,7 +14,7 @@
   "contributors": [
     "Richard Rodger (http://richardrodger.com/)"
   ],
-  "version": "1.5.6-isight",
+  "version": "1.5.7-isight",
   "main": "parambulator.js",
   "repository": {
     "url": "https://github.com/rjrodger/parambulator.git"
