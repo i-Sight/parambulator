@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "gex": "https://github.com/i-Sight/gex.git#v1.0.2-isight",
-    "jsonic": "0.3.1",
+    "jsonic": "^2.16.0",
     "lodash": "4.17.21"
   },
   "files": [
